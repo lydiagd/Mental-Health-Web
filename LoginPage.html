@@ -1,111 +1,71 @@
 <!DOCTYPE html> 
 <html> 
 <head>
-<link rel="stylesheet" type="text/css" href="style.css">
-<style> 
-    /*set border to the form*/ 
-      
-    form { 
-        border: 3px solid #f1f1f1; 
-    } 
-    /*assign full width inputs*/ 
-      
-    input[type=text], 
-    input[type=password] { 
-        width: 100%; 
-        padding: 12px 20px; 
-        margin: 8px 0; 
-        display: inline-block; 
-        border: 1px solid #ccc; 
-        box-sizing: border-box; 
-    } 
-    /*set a style for the buttons*/ 
-      
-    button { 
-        background-color: rgb(76, 144, 175); 
-        color: white; 
-        padding: 14px 20px; 
-        margin: 8px 0; 
-        border: none; 
-        cursor: pointer; 
-        width: 100%; 
-    } 
-    /* set a hover effect for the button*/ 
-      
-    button:hover { 
-        opacity: 0.8; 
-    } 
-    /*set extra style for the cancel button*/ 
-      
-    .cancelbtn { 
-        width: auto; 
-        padding: 10px 18px; 
-        background-color: #3669f4; 
-    } 
-    /*centre the display image inside the container*/ 
-      
-    .imgcontainer { 
-        text-align: center; 
-        margin: 24px 0 12px 0; 
-    } 
-    /*set image properties*/ 
-      
-    img.avatar { 
-        width: 40%; 
-        border-radius: 50%; 
-    } 
-    /*set padding to the container*/ 
-      
-    .container { 
-        padding: 16px; 
-    } 
-    /*set the forgot password text*/ 
-      
-    span.psw { 
-        float: right; 
-        padding-top: 16px; 
-    } 
-    /*set styles for span and cancel button on small screens*/ 
-      
-    @media screen and (max-width: 150px) { 
-        span.psw { 
-            display: block; 
-            float: none; 
-        } 
-        .cancelbtn { 
-            width: 100%; 
-        } 
-    } 
-</style> 
-  
-<body> 
-  
-    <h2>Mental Health Tracker Journal</h2> 
-    <!--Step 1 : Adding HTML-->
-    <form action="/action_page.php"> 
-        <div class="imgcontainer"> 
-            <img src= 
-"mental-health-3337026_1920.jpg"
-                 alt="Avatar" class="avatar"> 
-        </div> 
-  
-        <div class="container"> 
-            <label><b>Username</b></label> 
-            <input type="text" placeholder="Enter Username" name="uname" required> 
-  
-            <label><b>Password</b></label> 
-            <input type="password" placeholder="Enter Password" name="psw" required> 
-  
-            <button type="submit">Login</button> 
-            <input type="checkbox" checked="checked"> Remember me 
-        </div> 
-  
-        <div class="container" style="background-color:#f1f1f1"> 
-            <button type="button" class="cancelbtn">Cancel</button> 
-            <span class="psw">Forgot <a href="#">password?</a></span> 
-        </div> 
-    </form> 
-  
+    <link rel="stylesheet" type="text/css" href="style.css"> 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</head>
+<body class = "bg_propetries">
+    <div class = "container">
+        <!-- Heading -->
+        <div class = "row mt-2">
+            <div class = "col-3"></div>
+            <div class = "col-6">
+                <h2 style = "text-align: center;">Mental Health Tracker Journal</h2> 
+            </div>
+        </div>
+
+        <!-- Extra padding to break heading from form box -->
+        <div class = "row my-2"></div>
+
+        <!--Step 1 : Adding HTML-->
+        <div class = "container">
+            <div>
+                <div class = "row p-2">
+                    <div class = "col-3"></div>
+                    <form class = "col-6 form_propetries" action="/action_page.php"> 
+                        <!-- Logo -->
+                        <div class="imgcontainer"> 
+                            <img src= "mental-health-3337026_1920.jpg"alt="Avatar" class="avatar"> 
+                        </div> 
+                        <!-- Username field -->
+                        <div class="form-group"> 
+                            <label class = "text-nowrap">Username</label> 
+                            <input type="text" class = "form-control" placeholder="Enter Username" name="uname" required> 
+                        </div>
+                        <!-- Password field -->
+                        <div class = "form-group">
+                            <label class = "text-nowrap">Password</label> 
+                            <input type="password" placeholder="Enter Password" class = "form-control" name="psw" required> 
+                        </div>
+                        <!-- Login button field -->
+                        <div class = "form-group">
+                            <button type="submit" class = "btn btn-primary">Login</button>
+                        </div>
+                        <div class = "form-group">
+                            <div class = "row">
+                                <!-- Remember Me field-->
+                                <div class = "col-4">
+                                    <div class = "form-check">
+                                        <input class = "form-check-input" type = "checkbox" value = "" id = "remember_me">
+                                        <label class = "form-check-label text-nowrap" for = "remember_me">
+                                            Remember Me
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class = 'col-4'></div>
+                                <!-- Forgot password field -->
+                                <div class = "col-4 pl-4">
+                                    <a href="#">Forgot password?</a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
 </body> 
 </head> 
 </html> 
