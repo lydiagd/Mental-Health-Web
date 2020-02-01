@@ -1,5 +1,11 @@
 const functions = require('firebase-functions');
 const express = require('express');
+var firebase = require('firebase');
+var firebaseui = require('firebaseui');
+
+// The Firebase Admin SDK to access the Firebase Realtime Database.
+const admin = require('firebase-admin');
+admin.initializeApp();
 
 const app = express(); 
 app.get('/login', (request, response) )
