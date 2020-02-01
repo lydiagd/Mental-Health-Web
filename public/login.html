@@ -1,28 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
+       
+    <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-app.js"></script>
+    <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyB6ZVf79WTTe72ER-f4Hctn1IeDKi8_GMU",
+        authDomain: "mental-health-web.firebaseapp.com",
+        databaseURL: "https://mental-health-web.firebaseio.com",
+        projectId: "mental-health-web",
+        storageBucket: "mental-health-web.appspot.com",
+        messagingSenderId: "71669510971",
+        appId: "1:71669510971:web:24fecc41a8cd9533937d1e",
+        measurementId: "G-PDTFWG20SP"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    </script>
+     <!-- The core Firebase JS SDK is always required and must be listed first -->
+     
+
+     <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+     <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-analytics.js"></script>
     <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
 </head>
 <body>
-        <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
         
-        <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
-        <script src="/__/firebase/7.8.0/firebase-app.js"></script>
-        
-        <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
-        <script src="/__/firebase/7.8.0/firebase-analytics.js"></script>
-        
-        <!-- Add Firebase products that you want to use -->
-        <script src="/__/firebase/7.8.0/firebase-auth.js"></script>
-        <script src="/__/firebase/7.8.0/firebase-firestore.js"></script>
-        
+
     <!-- The surrounding HTML is left untouched by FirebaseUI.
      Your app may use that space for branding, controls and other customizations.-->
     <h1>Welcome to My Awesome App</h1>
     <div id="firebaseui-auth-container"></div>
-    <div id="loader">Loading...</div>
-    <script src = "firebase.js"></script>
     <script src = "login.js"></script>
     
 </body>
