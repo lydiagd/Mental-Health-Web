@@ -6,14 +6,16 @@
       "**/.*",
       "**/node_modules/**"
     ],
+    "redirects": [
+      {
+        "source": "/login",
+        "destination": "/LoginPage.html"
+      }
+    ],
     "rewrites": [
       {
         "source": "/",
         "destination": "/index.html"
-      },
-      {
-        "source": "/login",
-        "destination":"/login.html"
       }
     ]
   }
