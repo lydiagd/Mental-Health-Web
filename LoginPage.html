@@ -1,0 +1,71 @@
+<!DOCTYPE html> 
+<html> 
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css"> 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</head>
+<body class = "bg_propetries">
+    <div class = "container">
+        <!-- Heading -->
+        <div class = "row mt-2">
+            <div class = "col-3"></div>
+            <div class = "col-6">
+                <h2 style = "text-align: center;">Mental Health Tracker Journal</h2> 
+            </div>
+        </div>
+
+        <!-- Extra padding to break heading from form box -->
+        <div class = "row my-2"></div>
+
+        <!--Step 1 : Adding HTML-->
+        <div class = "container">
+            <div>
+                <div class = "row p-2">
+                    <div class = "col-3"></div>
+                    <form class = "col-6 form_propetries" action="/action_page.php"> 
+                        <!-- Logo -->
+                        <div class="imgcontainer"> 
+                            <img src= "mental-health-3337026_1920.jpg"alt="Avatar" class="avatar"> 
+                        </div> 
+                        <!-- Username field -->
+                        <div class="form-group"> 
+                            <label class = "text-nowrap">Username</label> 
+                            <input type="text" class = "form-control" placeholder="Enter Username" name="uname" required> 
+                        </div>
+                        <!-- Password field -->
+                        <div class = "form-group">
+                            <label class = "text-nowrap">Password</label> 
+                            <input type="password" placeholder="Enter Password" class = "form-control" name="psw" required> 
+                        </div>
+                        <!-- Login button field -->
+                        <div class = "form-group">
+                            <button type="submit" class = "btn btn-primary">Login</button>
+                        </div>
+                        <div class = "form-group">
+                            <div class = "row">
+                                <!-- Remember Me field-->
+                                <div class = "col-4">
+                                    <div class = "form-check">
+                                        <input class = "form-check-input" type = "checkbox" value = "" id = "remember_me">
+                                        <label class = "form-check-label text-nowrap" for = "remember_me">
+                                            Remember Me
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class = 'col-4'></div>
+                                <!-- Forgot password field -->
+                                <div class = "col-4 pl-4">
+                                    <a href="#">Forgot password?</a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+</body> 
+</head> 
+</html> 
