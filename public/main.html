@@ -3,9 +3,12 @@
 <script src="/__/firebase/7.8.0/firebase-app.js"></script>    
 <!-- Add Firebase products that you want to use -->
 <script src="/__/firebase/7.8.0/firebase-auth.js"></script>
-
+<script src="/__/firebase/init.js"></script>
+<script src="graph.js"></script>
 
 <script>
+    import Graph from "graph.js"; 
+    var graph = require ("./graph.js");
     firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     // User is signed in.
@@ -13,39 +16,10 @@
     document.write("<h2>Your history</h2>");
 
 
-window.onload = function () {
 
-var chart = new CanvasJS.Chart("chartContainer", {
-	animationEnabled: true,
-	theme: "light2",
-	title:{
-		text: "Simple Line Chart"
-	},
-	axisY:{
-		includeZero: false
-	},
-	data: [{        
-		type: "line",       
-		dataPoints: [
-			{ y: 450 },
-			{ y: 414},
-			{ y: 520, indexLabel: "highest",markerColor: "red", markerType: "triangle" },
-			{ y: 460 },
-			{ y: 450 },
-			{ y: 500 },
-			{ y: 480 },
-			{ y: 480 },
-			{ y: 410 , indexLabel: "lowest",markerColor: "DarkSlateGrey", markerType: "cross" },
-			{ y: 500 },
-			{ y: 480 },
-			{ y: 510 }
-		]
-	}]
-});
-chart.render();
 
-}
-  } else {
+    }
+   else {
     // No user is signed in.
     document.write("<h1>get outta here!</h1>")
   }
