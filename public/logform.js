@@ -43,7 +43,7 @@ button.addEventListener ("click", function () {
         tag: tag
     }).then (function() { 
         console.log ("SUCCESS!");
-        window.location.href = '/main.html';
+        // window.location.replace ('https://mental-health-web.web.app/dashboard');
     }).catch (function (error) {
         console.log (error);
     });
