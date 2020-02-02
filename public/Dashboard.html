@@ -23,7 +23,7 @@
                     querySnapshot.forEach (function (doc) {
                         console.log (doc.data());
                         var ms = doc.data().timestamp.seconds * 1000;
-                        datapoint.push ({label: new Date (ms).toString(), y: parseInt (doc.data().happiness), compare: ms});
+                        datapoint.push ({label: new Date (ms).toString(), y: parseInt (doc.data().happiness), compare: ms, description: doc.data().description });
                     });
 
                     datapoint = datapoint.sort(function(a, b){ return a.compare-b.compare });
@@ -36,6 +36,7 @@
                     data: [              
                         {
                             // Change type to "doughnut", "line", "splineArea", etc.
+                            toolTipContent: "<div> {description} </div>",
                             type: "spline",
                             dataPoints: datapoint
                         }
