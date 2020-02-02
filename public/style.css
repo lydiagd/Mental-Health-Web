@@ -55,7 +55,7 @@ body{
     margin-top: 20px;
 }
 .active-option {
-    background-color: blue;
+    background-color: rgb(136, 136, 194);
 }
 hr {
     display: block;
