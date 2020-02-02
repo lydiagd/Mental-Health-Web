@@ -5,50 +5,56 @@
 <script src="/__/firebase/7.8.0/firebase-app.js"></script>
 <script src="/__/firebase/7.8.0/firebase-auth.js"></script>
 <script src="/__/firebase/init.js"></script>
+<!-- Firestore scripts-->
+<script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-firestore.js"></script>
 
 <script type="text/javascript">
-window.onload = function () {
-    firebase.auth().onAuthStateChanged(function(user) {
-    if (user) {
+    var db = firebase.firestore(); 
+    window.onload = function () {
+        firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+            var name = firebase.auth().currentUser.displayName;
+            document.getElementById("display_name").innerHTML = "Welcome " + name + "!";
+            var datapoint = [];
+            console.log (user.uid);
+            db.collection("stories").where("user_id", "==", user.uid)
+                .get()
+                .then(function(querySnapshot){
+                    querySnapshot.forEach (function (doc) {
+                        console.log (doc.data());
+                        var ms = doc.data().timestamp.seconds * 1000;
+                        datapoint.push ({label: new Date (ms).toString(), y: parseInt (doc.data().happiness), compare: ms});
+                    });
 
-        var db = firebase.firestore(); 
-        db.collection("stories").where("user_id", "==", user.uid)
-            .get()
-            .then(function(querySnapshot){
+                    datapoint = datapoint.sort(function(a, b){ return a.compare-b.compare });
+                    console.log ("SORT");
+                    console.log (datapoint);
+                    var chart2 = new CanvasJS.Chart("chartContainer", {
+                    title:{
+                        text: ""  
+                    },
+                    data: [              
+                        {
+                            // Change type to "doughnut", "line", "splineArea", etc.
+                            type: "spline",
+                            dataPoints: datapoint
+                        }
+                    ]
+                });
+                chart2.render();
+                }).catch (function (error) {
+                    console.log (error);
+                });
+            console.log (datapoint);
+        
+        }
+        else 
+        {
+            document.getElementById("someObj").style.display = "none";
+            document.getElementById("someObj2").style.display = "none";
 
-            })
-
-
-
-
-
-	var chart2 = new CanvasJS.Chart("chartContainer", {
-		title:{
-			text: ""  
-		},
-		data: [              
-		{
-			// Change type to "doughnut", "line", "splineArea", etc.
-			type: "spline",
-			dataPoints: [
-				{ label: "Jan 10",  y: 9  },
-				{ label: "Jan 11", y: 8  },
-				{ label: "Jan 12", y: 7  },
-				{ label: "Jan 13",  y: 8  },
-				{ label: "Jan 14",  y: 9  }
-			]
-		}
-		]
-    })
-    chart2.render();
-    }
-    else 
-    {
-        document.getElementById("someObj").style.display = "none";
-        document.getElementById("someObj2").style.display = "none";
-
-    }})
-    }
+        }})
+        }
 </script>
 
 </head>
@@ -95,7 +101,8 @@ window.onload = function () {
                 <a href="#">Posts</a>
                 <a href="#">Help</a>
             </div>
-            <text> Welcome 'your name'!</text>
+            <text></text>
+            <div id = "display_name"></div>
         </div>
         <div id="main">
             <text id="intro">
