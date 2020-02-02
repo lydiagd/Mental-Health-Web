@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
 <head>
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
@@ -17,7 +17,7 @@ firebase.auth().onAuthStateChanged(function(user) {
 		data: [              
 		{
 			// Change type to "doughnut", "line", "splineArea", etc.
-			type: "sline",
+			type: "spline",
 			dataPoints: [
 				{ label: "Jan 10",  y: 9  },
 				{ label: "Jan 11", y: 8  },
@@ -38,8 +38,8 @@ firebase.auth().onAuthStateChanged(function(user) {
   })}
 </script>
 </head>
-<a id="bigbutton" href="LogForm.html"><button type="button"><b>LOG</b></button></a>
 <body>
 <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+<a id="bigbutton" href="LogForm.html"><button type="button"><b>LOG</b></button></a>
 </body>
 </html>
