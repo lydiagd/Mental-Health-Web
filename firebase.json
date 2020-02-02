@@ -7,20 +7,28 @@
       "**/node_modules/**"
     ],
     "redirects": [
-      {
-        "source": "/login",
-        "destination": "/login.html"
-      }
+      
     ],
     "rewrites": [
       {
-        "source": "/",
+        "source":"/home",
+        "destination": "/Home.html"
+      },
+      {
+        "source":"/",
+        "destination": "/Home.html"
+      },
+      {
+        "source":"/index",
         "destination": "/index.html"
       },
-
       {
-        "source":"/main",
-        "destination": "/main.html"
+        "source": "/login",
+        "destination": "/login.html"
+      },
+      {
+        "source": "/log",
+        "destination": "/LogForm.html"
       }
     ]
   }
