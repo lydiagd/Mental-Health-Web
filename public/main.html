@@ -6,17 +6,18 @@
 <script src="/__/firebase/7.8.0/firebase-auth.js"></script>
 <script src="/__/firebase/init.js"></script>
 <script type="text/javascript">
+window.onload = function () {
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
-window.onload = function () {
+
 	var chart = new CanvasJS.Chart("chartContainer", {
 		title:{
-			text: "Your history:"              
+			text: "Your history:"  
 		},
 		data: [              
 		{
 			// Change type to "doughnut", "line", "splineArea", etc.
-			type: "line",
+			type: "sline",
 			dataPoints: [
 				{ label: "Jan 10",  y: 9  },
 				{ label: "Jan 11", y: 8  },
@@ -27,11 +28,17 @@ window.onload = function () {
 		}
 		]
 	});
-	chart.render();
+    chart.render();
+    
+    
 }
-  }})
+  else {
+    document.getElementById("bigbutton").style.visibility="hidden"; 
+  }
+  })}
 </script>
 </head>
+<a id="bigbutton" href="LogForm.html"><button type="button"><b>LOG</b></button></a>
 <body>
 <div id="chartContainer" style="height: 300px; width: 100%;"></div>
 </body>
