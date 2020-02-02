@@ -1,6 +1,115 @@
+<!DOCTYPE html>
 <html>
-<header><title>This is title</title></header>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Mental Health Tracker</title>
+
+</head>
+
 <body>
-    Mental Health App!
+    <script>
+        var txt
+        $(document).ready(function () {
+          $('#test a').on('click', function () {
+            txt= ($(this).text());
+            // alert("Your Favourite Sports is "+txt);
+            $('#test a').removeClass('active-option')
+            $(this).addClass( "active-option" );
+            $('#dropdownMenuButton').html(txt)
+          });
+        });
+        
+
+      </script>
+
+    <script src="./firebase.js"></script>
+    <script src="./main.js"></script>
+    <div id="header-main">
+        <div id="header">
+            <div id="sidenav">
+                <a href="login.html">Profile</a>
+                <a href="#">SERBI</a>
+                <a href="#">Posts</a>
+                <a href="#">Help</a>
+            </div>
+            <text>Welcome 'your name'!</text>
+        </div>
+        <div id="main">
+            <text id="intro">
+                Welcome to your mental health tracker, where you can log your current mental health state and keep a
+                record
+                of your health
+            </text>
+
+            <div class="dropdown" id="options">
+                <text>Weekly Goal</text>
+
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Please select an option
+                </button>
+                <div class="dropdown-menu" id="test" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">Please select an option</a>
+
+                    <a class="dropdown-item" href="#">Once a day</a>
+                    <a class="dropdown-item" href="#">Every 2-3 days</a>
+                    <a class="dropdown-item" href="#">Twice a week</a>
+                    <a class="dropdown-item" href="#">Once a week</a>
+
+                </div>
+
+                
+                <!-- <nav>
+            <ul>
+                <li><a href="#">Please select an option:</a>
+                        <li><a href="#">Once a day</a></li>
+                        <li><a href="#">Every 2-3 days</a></li>
+                        <li><a href="#">twice a week</a></li>
+                        <li><a href="#">once a week</a></li>
+                   
+                </li>
+
+            </ul>
+        </nav> -->
+
+            </div>
+
+            <div id="log">
+                <h1>User Graph</h1>
+                <button type="button"><b>LOG</b></button>
+                <h4>It's been 'days' days since you last logged!</h4>
+                <ul>
+                    <p><b>Guidelines for the log:</b></p>
+                    <li>Do not lie about your feelings. This is a place for you to share what's on
+                        your mind in a space that's safe for you</li>
+                    <li>Feel free to log as many (or as few) times a day as you need. We aren't keeping tabs on you :)
+                    </li>
+                    <li>Try to stay on track with your weekly goal to make sure your log is up to date with your mental
+                        health
+                    </li>
+                </ul>
+                <p>Here are Some of your user stats:. </p>
+
+                <p>Check out this link <a href="https://www.dummies.com/"> just in case we need it</a>.
+                    Break up your page with a horizontal rule or two. </p>
+                <hr>
+                <p>Fill out your log for today! Click on <a href="LogForm.html">this link</a> to find the form.</p>
+            </div>
+        </div>
+
+
 </body>
+
 </html>
