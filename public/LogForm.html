@@ -33,7 +33,28 @@
             <!-- <input type="text" name="description" placeholder="Write a description of your day"> 
 
             <input type="radio" name="ranking of feelings today" placeholder="how do you feel 1-10?">  -->
+
+
         </form>
+
+        <p>Click the button to create a SELECT and an OPTION element.</p>
+
+        <button onclick="myFunction()">Add Tag:</button>
+
+        <script>
+        function myFunction() {
+            var x = document.createElement("SELECT");
+            x.setAttribute("id", "mySelect");
+            document.body.appendChild(x);
+
+            var z = document.createElement("option");
+            z.setAttribute("value", "volvocar");
+            var t = document.createTextNode("Volvo");
+            z.appendChild(t);
+            document.getElementById("mySelect").appendChild(z);
+        }
+        </script>
+
         </fieldset>
         <a href="index.html"><button type="button"><b>SUBMIT</b></button></a>
     </body>
