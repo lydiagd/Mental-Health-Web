@@ -10,10 +10,6 @@
       {
         "source": "/login",
         "destination": "/login.html"
-      },  
-      {
-        "source": "/login",
-        "destination": "/login.html"
       }
     ],
     "rewrites": [
