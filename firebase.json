@@ -29,6 +29,10 @@
       {
         "source": "/log",
         "destination": "/LogForm.html"
+      },
+      {
+        "source": "/dashboard",
+        "destination": "/dashboard.html"
       }
     ]
   }
