@@ -4,7 +4,7 @@
             <!-- <meta> charset="utf=8"> -->
             <title>Log how you're doing today</title>
  
-
+            <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
         <fieldset>
@@ -23,9 +23,9 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>
-                        <input type="text" name="description" placeholder="Write a description of your day">
-                    </td>
+                 
+                    <input type="text" name="description" placeholder="Write a description of your day and how it affected your mental well being">
+                    
                 </tr>
             </table>
             
@@ -33,8 +33,47 @@
             <!-- <input type="text" name="description" placeholder="Write a description of your day"> 
 
             <input type="radio" name="ranking of feelings today" placeholder="how do you feel 1-10?">  -->
+
+
         </form>
+
+        <!-- <p>Click the button to create a SELECT and an OPTION element.</p>
+
+        <button onclick="myFunction()">Add Tag:</button>
+
+        <script>
+        function myFunction() {
+            var x = document.createElement("SELECT");
+            x.setAttribute("id", "mySelect");
+            document.body.appendChild(x);
+
+            var z = document.createElement("option");
+            
+           z.setAttribute("value", "volvocar");
+            var t = document.createTextNode("Select Tag");
+            z.appendChild(t);
+            document.getElementById("mySelect").appendChild(z);
+        }
+        </script> -->
+
+
+        <label for="tag-select">Choose as many tags as applies to you at this moment:</label>
+
+        <select name="moods" id="tag-select">
+            <option value="">--Please choose an option--</option>
+            <option value="content">content</option>
+            <option value="depressed">depressed</option>
+            <option value="joyous">joyous</option>
+            <option value="angry">angry</option>
+            <option value="misunderstood">misunderstood</option>
+            <option value="disappointed">disappointed</option>
+            <option value="alone">alone</option>
+            <option value="peaceful">peaceful</option>
+            <option value="unsatisfied">unsatisfied</option>
+            <option value="loved">loved</option>
+        </select>
+
         </fieldset>
-        <a href="index.html"><button type="button"><b>SUBMIT</b></button></a>
+        <a href="index.html"><button class="LogFormSubmit" type="button"><b>SUBMIT</b></button></a>
     </body>
 </html> 
