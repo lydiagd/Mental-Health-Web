@@ -10,6 +10,18 @@
 window.onload = function () {
     firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
+
+        var db = firebase.firestore(); 
+        db.collection("stories").where("user_id", "==", user.uid)
+            .get()
+            .then(function(querySnapshot){
+
+            })
+
+
+
+
+
 	var chart2 = new CanvasJS.Chart("chartContainer", {
 		title:{
 			text: ""  
