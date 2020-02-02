@@ -1,27 +1,38 @@
-
+<!DOCTYPE HTML>
+<html>
+<head>
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-<script src="/__/firebase/7.8.0/firebase-app.js"></script>    
-<!-- Add Firebase products that you want to use -->
+<script src="/__/firebase/7.8.0/firebase-app.js"></script>
 <script src="/__/firebase/7.8.0/firebase-auth.js"></script>
 <script src="/__/firebase/init.js"></script>
-<script src="graph.js"></script>
-
-<script>
-    import Graph from "graph.js"; 
-    var graph = require ("./graph.js");
-    firebase.auth().onAuthStateChanged(function(user) {
+<script type="text/javascript">
+firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
-    // User is signed in.
-    document.write("<h1>Hello user!</h1>");
-    document.write("<h2>Your history</h2>");
-
-    ReactDOM.render(
-    <Graph />
-    );
-    }
-   else {
-    // No user is signed in.
-    document.write("<h1>get outta here!</h1>")
-  }
-});
+window.onload = function () {
+	var chart = new CanvasJS.Chart("chartContainer", {
+		title:{
+			text: "Your history:"              
+		},
+		data: [              
+		{
+			// Change type to "doughnut", "line", "splineArea", etc.
+			type: "line",
+			dataPoints: [
+				{ label: "Jan 10",  y: 9  },
+				{ label: "Jan 11", y: 8  },
+				{ label: "Jan 12", y: 7  },
+				{ label: "Jan 13",  y: 8  },
+				{ label: "Jan 14",  y: 9  }
+			]
+		}
+		]
+	});
+	chart.render();
+}
+  }})
 </script>
+</head>
+<body>
+<div id="chartContainer" style="height: 300px; width: 100%;"></div>
+</body>
+</html>
