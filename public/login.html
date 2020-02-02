@@ -1,40 +1,59 @@
 <!DOCTYPE html>
 <html>
-<head>
-       
-    <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-app.js"></script>
-    <script>
-    // Your web app's Firebase configuration
-    var firebaseConfig = {
-        apiKey: "AIzaSyB6ZVf79WTTe72ER-f4Hctn1IeDKi8_GMU",
-        authDomain: "mental-health-web.firebaseapp.com",
-        databaseURL: "https://mental-health-web.firebaseio.com",
-        projectId: "mental-health-web",
-        storageBucket: "mental-health-web.appspot.com",
-        messagingSenderId: "71669510971",
-        appId: "1:71669510971:web:24fecc41a8cd9533937d1e",
-        measurementId: "G-PDTFWG20SP"
-    };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-    </script>
-     <!-- The core Firebase JS SDK is always required and must be listed first -->
-     
+    <head>
+        <script src="/__/firebase/7.8.0/firebase-app.js"></script>    
+        <!-- Add Firebase products that you want to use -->
+        <script src="/__/firebase/7.8.0/firebase-auth.js"></script>
+        <script src="/__/firebase/init.js"></script>
+        <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"> </script>
+        <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+        <script>
+                var ui = new firebaseui.auth.AuthUI (firebase.auth());
+                ui.start ('#firebase-auth-container', {
+                    signInOptions: [
+                        firebase.auth.EmailAuthProvider.PROVIDER_ID
+                    ],
+                });
 
-     <!-- TODO: Add SDKs for Firebase products that you want to use
-         https://firebase.google.com/docs/web/setup#available-libraries -->
-     <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-analytics.js"></script>
-     <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
-     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
-</head>
-<body>
-        
-
-    <!-- The surrounding HTML is left untouched by FirebaseUI.
-     Your app may use that space for branding, controls and other customizations.-->
-    <h1>Login Page</h1>
-    <div id="firebaseui-auth-container"></div>
-    <script type="module" src = "./login.js"></script>
-    
-</body>
+                var uiConfig = {
+                callbacks: {
+                    signInSuccessWithAuthResult: function(authResult, redirectUrl) {
+                    // User successfully signed in.
+                    // Return type determines whether we continue the redirect automatically
+                    // or whether we leave that to developer to handle.
+                    return true;
+                    },
+                    uiShown: function() {
+                    // The widget is rendered.
+                    // Hide the loader.
+                    document.getElementById('loader').style.display = 'none';
+                    }
+                },
+                // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
+                signInFlow: 'popup',
+                signInSuccessUrl: 'main.html',
+                signInOptions: [
+                    // Leave the lines as is for the providers you want to offer your users.
+                    firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+                    firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+                    firebase.auth.TwitterAuthProvider.PROVIDER_ID,
+                    firebase.auth.GithubAuthProvider.PROVIDER_ID,
+                    firebase.auth.EmailAuthProvider.PROVIDER_ID,
+                    firebase.auth.PhoneAuthProvider.PROVIDER_ID
+                ],
+                // Terms of service url.
+                tosUrl: 'index.html',
+                // Privacy policy url.
+                privacyPolicyUrl: 'index.html'
+                };
+                
+                // The start method will wait until the DOM is loaded.
+                ui.start('#firebaseui-auth-container', uiConfig);
+        </script>
+    </head>
+    <body>
+        <h1>Login</h1>
+        <div id = "firebaseui-auth-container"></div>
+        <div id = "loader">Loading...</div>
+    </body>
 </html>

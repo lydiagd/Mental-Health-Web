@@ -9,7 +9,7 @@
     "redirects": [
       {
         "source": "/login",
-        "destination": "/LoginPage.html"
+        "destination": "/login.html"
       }
     ],
     "rewrites": [
