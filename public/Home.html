@@ -5,42 +5,60 @@
 
 <script type="text/javascript">
 window.onload = function () {
-    firebase.auth().onAuthStateChanged(function(user) {
-    if (user) {
+    
 
 	var chart2 = new CanvasJS.Chart("chartContainer", {
 		title:{
 			text: "Your history:"  
-		},
-		data: [              
+        },
+        data: [              
 		{
 			// Change type to "doughnut", "line", "splineArea", etc.
-			type: "spline",
+            type: "spline",
+            visible: false,
+            name: "Jane",
 			dataPoints: [
 				{ label: "Jan 10",  y: 9  },
 				{ label: "Jan 11", y: 8  },
 				{ label: "Jan 12", y: 7  },
 				{ label: "Jan 13",  y: 8  },
 				{ label: "Jan 14",  y: 9  }
-			]
-		}
+            ]
+        },
+        {
+            type: "spline",
+            visible: false,
+            name: "Jimmy",
+			dataPoints: [
+				{ label: "Jan 10",  y: 1  },
+				{ label: "Jan 11", y: 2  },
+				{ label: "Jan 12", y: 4  },
+				{ label: "Jan 13",  y: 3  },
+				{ label: "Jan 14",  y: 5  }]
+        },
+        {
+            type: "spline",
+            visible: false,
+            name: "Jack",
+			dataPoints: [
+				{ label: "Jan 10",  y: 5  },
+				{ label: "Jan 11", y: 6  },
+				{ label: "Jan 12", y: 1 },
+				{ label: "Jan 13",  y: 2  },
+				{ label: "Jan 14",  y: 3  }]
+        }
+		
 		]
+		
     })
     chart2.render();
-    
     }
-    else 
-    {
-        document.getElementById("someObj").style.display = "none";
-        document.getElementById("someObj2").style.display = "none";
-
-    }})}
 </script>
 
 </head>
 
 
-<body id="someObj">
+<body >
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -57,7 +75,7 @@ window.onload = function () {
 
 </body>
 
-<body id = "someObj2">
+<body>
     <script>
         var txt
         $(document).ready(function () {
