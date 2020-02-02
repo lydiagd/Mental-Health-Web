@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+<script type="text/javascript">
+window.onload = function () {
+
+	var chart2 = new CanvasJS.Chart("chartContainer", {
+		title:{
+			text: "Your history:"  
+		},
+		data: [              
+		{
+			// Change type to "doughnut", "line", "splineArea", etc.
+			type: "spline",
+			dataPoints: [
+				{ label: "Jan 10",  y: 9  },
+				{ label: "Jan 11", y: 8  },
+				{ label: "Jan 12", y: 7  },
+				{ label: "Jan 13",  y: 8  },
+				{ label: "Jan 14",  y: 9  }
+			]
+		}
+		]
+    })
+    chart2.render();
+    
+    }
+</script>
+
+</head>
+
+
+<body>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Mental Health Tracker</title>
+
+</body>
+
+<body id>
+    <script>
+        var txt
+        $(document).ready(function () {
+          $('#test a').on('click', function () {
+            txt= ($(this).text());
+            // alert("Your Favourite Sports is "+txt);
+            $('#test a').removeClass('active-option')
+            $(this).addClass( "active-option" );
+            $('#dropdownMenuButton').html(txt)
+          });
+        });
+        
+
+      </script>
+    
+    <div id="header-main">
+        <div id="header">
+            <div id="sidenav">
+                <a href="LoginPage.html">Profile</a>
+                <a href="#">Services</a>
+                <a href="#">Posts</a>
+                <a href="#">Help</a>
+            </div>
+        </div>
+        <h1> Welcome to the Mental Health Tracker</h1>
+        <div id="main">
+    
+            <!-- <div class="dropdown" id="options">
+                <text>Weekly Goal</text>
+
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Please select an option
+                </button>
+                <div class="dropdown-menu" id="test" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">Please select an option</a>
+
+                    <a class="dropdown-item" href="#">Once a day</a>
+                    <a class="dropdown-item" href="#">Every 2-3 days</a>
+                    <a class="dropdown-item" href="#">Twice a week</a>
+                    <a class="dropdown-item" href="#">Once a week</a>
+
+                </div>
+
+            </div> -->
+
+            <div id="log">
+                <h1>Track your mental health, learn about your personal mood cycles, and use logs
+                    to share your experience with others
+                </h1>
+                
+                <a href="LoginPage.html"><button type="button"><b>LOGIN HERE</b></button></a>
+
+                <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+                
+                <ul>
+                    <p><b>Guidelines for the log:</b></p>
+                    <li>Do not lie about your feelings. This is a place for you to share what's on
+                        your mind in a space that's safe for you</li>
+                    <li>Feel free to log as many (or as few) times a day as you need. We aren't keeping tabs on you :)
+                    </li>
+                    <li>Try to stay on track with your weekly goal to make sure your log is up to date with your mental
+                        health
+                    </li>
+                </ul>
+                <h2>Login and start sharing! All your information is completely anonymous and will not be read by anyone without consent.</h2>
+
+                <p>Check out <a href="https://www.mentalhealth.gov/"> this link </a>for mental health services. Find up-to-date 
+                    resources and strategies that care for your mental health!
+                </p>
+                <hr>
+                <p>Fill out your log for today! Click on <a href="LogForm.html">this link</a> to find the form.</p>
+            </div>
+        </div>
+
+
+</body>
+
+</html>
