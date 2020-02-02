@@ -5,6 +5,8 @@
             <title>Log how you're doing today</title>
  
             <link rel="stylesheet" type="text/css" href="style.css">
+
+            <h1>My Log Form for 'DATE'</h1>
     </head>
     <body>
         <fieldset>
@@ -57,7 +59,7 @@
         </script> -->
 
 
-        <label for="tag-select">Choose as many tags as applies to you at this moment:</label>
+        <label for="tag-select">Choose a tag that best applies to you at this moment:</label>
 
         <select name="moods" id="tag-select">
             <option value="">--Please choose an option--</option>
@@ -74,6 +76,13 @@
         </select>
 
         </fieldset>
+        <div class = "form-check">
+            <input class = "form-check-input" type = "checkbox" value = "" id = "remember_me">
+            <label class = "form-check-label text-nowrap" for = "remember_me">
+                PRIVATE
+            </label>
+        </div>
+        <p>*Please check the box if this post is private, viewable only to you</p>
         <a href="index.html"><button class="LogFormSubmit" type="button"><b>SUBMIT</b></button></a>
     </body>
 </html> 
