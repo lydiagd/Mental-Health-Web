@@ -4,7 +4,7 @@
             <!-- <meta> charset="utf=8"> -->
             <title>Log how you're doing today</title>
  
-
+            <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
         <fieldset>
@@ -23,9 +23,9 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>
-                        <input type="text" name="description" placeholder="Write a description of your day">
-                    </td>
+                 
+                    <input type="text" name="description" placeholder="Write a description of your day and how it affected your mental well being">
+                    
                 </tr>
             </table>
             
@@ -37,7 +37,7 @@
 
         </form>
 
-        <p>Click the button to create a SELECT and an OPTION element.</p>
+        <!-- <p>Click the button to create a SELECT and an OPTION element.</p>
 
         <button onclick="myFunction()">Add Tag:</button>
 
@@ -48,14 +48,15 @@
             document.body.appendChild(x);
 
             var z = document.createElement("option");
-            z.setAttribute("value", "volvocar");
-            var t = document.createTextNode("Volvo");
+            
+           z.setAttribute("value", "volvocar");
+            var t = document.createTextNode("Select Tag");
             z.appendChild(t);
             document.getElementById("mySelect").appendChild(z);
         }
-        </script>
+        </script> -->
 
         </fieldset>
-        <a href="index.html"><button type="button"><b>SUBMIT</b></button></a>
+        <a href="index.html"><button class="LogFormSubmit" type="button"><b>SUBMIT</b></button></a>
     </body>
 </html> 
